@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#102a43">
+    <meta name="description" content="Cepillo capilar con luz LED y EMS Aoneclicks. Envío gratis en Colombia, pago contraentrega y guía digital incluida.">
+    <title>Cepillo capilar LED + EMS | Aoneclicks</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --ink: #102a43;
+            --paper: #f2f7fb;
+            --white: #ffffff;
+            --rose: #00a896;
+            --rose-light: #7be2d3;
+            --muted: #586d80;
+            --line: #d8e3ec;
+            --green: #117a62;
+            --sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+        }
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 82px; }
+        body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+        a { color: inherit; text-decoration: none; }
+        button, input, select { font: inherit; }
+        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible { outline: 3px solid #00a896; outline-offset: 3px; }
+        .announcement { padding: 10px 16px; background: var(--rose); color: var(--ink); text-align: center; font-size: 11px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+        .header { display: flex; min-height: 72px; align-items: center; justify-content: space-between; padding: 0 7%; border-bottom: 1px solid var(--line); }
+        .brand { font-size: 22px; font-weight: 950; letter-spacing: -.07em; }
+        .brand span { color: var(--rose); }
+        .header-right { display: flex; align-items: center; gap: 24px; }
+        .header-note { color: var(--muted); font-size: 12px; }
+        .button { position: relative; display: inline-flex; min-height: 54px; align-items: center; justify-content: center; gap: 10px; overflow: hidden; padding: 0 23px; border: 0; border-radius: 5px; background: var(--rose); color: var(--ink); cursor: pointer; font-size: 12px; font-weight: 850; letter-spacing: .04em; text-align: center; text-transform: uppercase; transition: transform .18s, background .18s; }
+        .button:hover { transform: translateY(-2px); background: var(--rose-light); }
+        .button::after { position: absolute; top: -70%; left: -45%; width: 28%; height: 240%; background: rgba(255,255,255,.38); content: ""; transform: rotate(25deg); transition: left .5s ease; }
+        .button:hover::after { left: 125%; }
+        .button-dark { background: var(--ink); color: var(--white); }
+        .button-dark:hover { background: #1d4568; }
+        .button svg { width: 17px; height: 17px; flex: 0 0 auto; }
+        .hero { display: grid; grid-template-columns: 1.02fr .98fr; min-height: 620px; align-items: center; gap: 5%; padding: 62px 7% 76px; background: var(--ink); color: var(--white); }
+        .hero-copy { max-width: 640px; }
+        .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--rose); font-size: 11px; font-weight: 850; letter-spacing: .14em; text-transform: uppercase; }
+        .eyebrow::before { width: 21px; height: 2px; background: currentColor; content: ""; }
+        h1, h2, h3, p { margin-top: 0; }
+        h1 { margin: 22px 0 20px; font-size: clamp(50px, 6vw, 83px); font-weight: 950; letter-spacing: -.065em; line-height: .99; }
+        h1 .pain { color: var(--rose-light); }
+        h1 .solution { color: #ffc857; }
+        .hero-copy > p { max-width: 510px; margin-bottom: 27px; color: #d4d0c8; font-size: 16px; line-height: 1.75; }
+        .hero-copy > p strong { color: var(--white); }
+        .price-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; margin: 0 0 22px; }
+        .price { color: var(--white); font-size: 34px; font-weight: 900; letter-spacing: -.04em; }
+        .price-caption { color: #c4beb3; font-size: 12px; }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+        .hero-actions .button { min-width: 215px; }
+        .micro-benefits { display: flex; flex-wrap: wrap; gap: 11px 19px; margin-top: 25px; color: #ded9cf; font-size: 11px; }
+        .micro-benefits span::before { margin-right: 7px; color: var(--rose-light); content: "✓"; font-weight: 900; }
+        .hero-visual { position: relative; display: grid; min-height: 470px; overflow: hidden; place-items: center; background: radial-gradient(circle at 50% 43%, #245779 0, #173d5b 42%, #0c2238 78%); }
+        .hero-visual::before, .hero-visual::after { position: absolute; border: 1px solid rgba(255,255,255,.13); border-radius: 50%; content: ""; animation: halo-pulse 5s ease-in-out infinite; }
+        .hero-visual::before { width: 330px; height: 330px; }
+        .hero-visual::after { width: 430px; height: 430px; animation-delay: -2.5s; }
+        .product-photo { display: block; width: min(90%, 430px); height: auto; aspect-ratio: 1; object-fit: contain; background: transparent; filter: drop-shadow(0 20px 24px rgba(0,0,0,.2)); }
+        .hero-photo { position: relative; z-index: 1; animation: product-float 5s ease-in-out infinite; }
+        .product-detail-photo { width: min(84%, 370px); filter: drop-shadow(0 18px 20px rgba(16,42,67,.2)); animation: product-float 5.5s ease-in-out infinite; animation-delay: -.8s; }
+        .led-caption { position: absolute; z-index: 2; top: 23%; right: 7%; padding: 9px 12px; border: 1px solid rgba(255,183,166,.55); border-radius: 40px; color: var(--rose-light); font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+        .led-caption::before { display: inline-block; width: 8px; height: 8px; margin-right: 7px; border-radius: 50%; background: #fb555c; box-shadow: 0 0 12px #fb555c; content: ""; }
+        .visual-caption { position: absolute; right: 17px; bottom: 16px; color: #d6cec4; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
+        .hero-copy { animation: enter-up .75s cubic-bezier(.2,.7,.2,1) both; }
+        .hero-visual { animation: enter-up .9s .12s cubic-bezier(.2,.7,.2,1) both; }
+        .hero-copy .eyebrow { animation: eyebrow-in .65s .2s both; }
+        .hero h1 { animation: headline-in .85s .28s both; }
+        .hero-copy > p { animation: enter-up .8s .42s both; }
+        .hero-actions .button:first-child { animation: cta-glow 3s 1.4s ease-in-out infinite; }
+        .led-caption::before { animation: led-pulse 1.8s ease-in-out infinite; }
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s cubic-bezier(.2,.7,.2,1); }
+        .reveal.is-visible { opacity: 1; transform: translateY(0); }
+        .pain-card.reveal:nth-child(2), .secure-grid > div.reveal:nth-child(2) { transition-delay: .12s; }
+        .pain-card.reveal:nth-child(3) { transition-delay: .24s; }
+        .product-copy.reveal { transition-delay: .14s; }
+        .pain-card, .trust-item, .offer-card { transition: transform .25s ease, box-shadow .25s ease; }
+        .pain-card:hover, .offer-card:hover { transform: translateY(-5px); box-shadow: 0 16px 36px rgba(23,23,19,.1); }
+        .trust-item:hover { transform: translateY(-3px); }
+        .floating-trust { animation: trust-bob 3s ease-in-out infinite; }
+        .whatsapp-float { animation: whatsapp-pulse 2.5s ease-out infinite; }
+        @keyframes enter-up { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes eyebrow-in { from { opacity: 0; letter-spacing: .32em; } to { opacity: 1; letter-spacing: .14em; } }
+        @keyframes headline-in { from { opacity: 0; transform: translateY(18px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        @keyframes product-float { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-11px) rotate(1deg); } }
+        @keyframes halo-pulse { 0%, 100% { opacity: .48; transform: scale(.96); } 50% { opacity: 1; transform: scale(1.04); } }
+        @keyframes led-pulse { 0%, 100% { opacity: .65; box-shadow: 0 0 5px #fb555c; } 50% { opacity: 1; box-shadow: 0 0 15px #fb555c; } }
+        @keyframes trust-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+        @keyframes whatsapp-pulse { 0%, 100% { box-shadow: 0 8px 22px rgba(0,0,0,.23), 0 0 0 0 rgba(32,184,102,.35); } 50% { box-shadow: 0 8px 22px rgba(0,0,0,.23), 0 0 0 9px rgba(32,184,102,0); } }
+        @keyframes cta-glow { 0%, 100% { box-shadow: 0 0 0 0 rgba(237,118,95,0); } 50% { box-shadow: 0 0 0 6px rgba(237,118,95,.17); } }
+        .trust-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; padding: 1px 7%; background: var(--line); }
+        .trust-item { display: flex; min-height: 96px; align-items: center; justify-content: center; gap: 10px; padding: 14px 10px; background: var(--white); text-align: center; }
+        .trust-item b { display: block; font-size: 11px; }
+        .trust-item small { display: block; margin-top: 4px; color: var(--muted); font-size: 9px; }
+        .trust-icon { color: var(--rose); font-size: 20px; }
+        .section { padding: 88px 8%; }
+        .section-heading { max-width: 740px; margin: 0 auto 40px; text-align: center; }
+        .section-heading .eyebrow { justify-content: center; }
+        .section-heading h2 { margin: 14px 0 12px; font-size: clamp(34px, 4.2vw, 55px); font-weight: 900; letter-spacing: -.055em; line-height: 1.06; }
+        .section-heading h2 em { color: var(--rose); font-style: normal; }
+        .section-heading p { max-width: 610px; margin: auto; color: var(--muted); font-size: 14px; line-height: 1.8; }
+        .pain-section { background: var(--white); }
+        .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 1100px; margin: 0 auto; }
+        .pain-card { min-height: 205xpx; padding: 27px; border: 1px solid var(--line); background: #fff; }
+        .pain-card .number { display: block; margin-bottom: 22px; color: var(--rose); font-size: 12px; font-weight: 900; letter-spacing: .1em; }
+        .pain-card h3 { margin-bottom: 9px; font-size: 19px; font-weight: 850; letter-spacing: -.03em; }
+        .pain-card p { margin-bottom: 0; color: var(--muted); font-size: 12px; line-height: 1.75; }
+        .product-section { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 8%; background: #d9f4f0; }
+        .product-visual { display: grid; min-height: 380px; place-items: center; background: rgba(255,255,255,.28); }
+        .product-copy h2 { max-width: 540px; margin: 15px 0; font-size: clamp(38px, 4.5vw, 58px); font-weight: 950; letter-spacing: -.06em; line-height: 1; }
+        .product-copy > p { max-width: 500px; color: #29485e; font-size: 14px; line-height: 1.85; }
+        .feature-list { display: grid; gap: 10px; margin: 24px 0 0; padding: 0; list-style: none; }
+        .feature-list li { display: flex; gap: 11px; font-size: 13px; line-height: 1.6; }
+        .feature-list li::before { color: var(--ink); content: "✦"; font-size: 12px; }
+        .comparison { background: var(--ink); color: var(--white); }
+        .comparison .section-heading p { color: #cbc5ba; }
+        .comparison-table { max-width: 930px; margin: 0 auto; overflow: hidden; border: 1px solid #4b4842; border-radius: 8px; }
+        .comparison-row { display: grid; grid-template-columns: 1.2fr 1fr 1fr; border-bottom: 1px solid #35536c; }
+        .comparison-row:last-child { border: 0; }
+        .comparison-row > div { padding: 18px 20px; border-right: 1px solid #35536c; font-size: 12px; line-height: 1.55; }
+        .comparison-row > div:last-child { border: 0; }
+        .comparison-head { background: #193c59; color: #e7f3fb; font-size: 11px !important; font-weight: 850; letter-spacing: .06em; text-transform: uppercase; }
+        .comparison-row > div:first-child { color: #c6d8e7; }
+        .comparison-row:not(.comparison-head) > div:last-child { color: var(--rose-light); font-weight: 700; }
+        .note { max-width: 930px; margin: 15px auto 0; color: #c6d8e7; font-size: 10px; line-height: 1.7; }
+        .visual-guide { max-width: 840px; margin: 0 auto; overflow: hidden; border-radius: 8px; background: #e3edf5; box-shadow: 0 18px 50px rgba(16,42,67,.12); }
+        .before-after-photo { display: block; width: 100%; height: auto; }
+        .guide-caveat { max-width: 840px; margin: 14px auto 0; padding: 14px 17px; border-left: 3px solid var(--rose); background: var(--white); color: var(--muted); font-size: 11px; line-height: 1.7; }
+        .offer { display: grid; grid-template-columns: 1fr .8fr; align-items: center; gap: 7%; padding: 75px 9%; background: #e7f0f7; }
+        .offer-copy h2 { max-width: 620px; margin: 15px 0; font-size: clamp(38px, 4vw, 54px); font-weight: 950; letter-spacing: -.06em; line-height: 1.04; }
+        .offer-copy > p { max-width: 500px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+        .offer-points { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 21px; }
+        .offer-points span { padding: 9px 12px; border: 1px solid #b9cbd9; border-radius: 30px; font-size: 10px; font-weight: 750; }
+        .offer-card { padding: 29px; border: 1px solid #d8e3ec; background: var(--white); box-shadow: 0 15px 45px rgba(16,42,67,.09); }
+        .offer-card .eyebrow { color: var(--green); }
+        .offer-card h3 { margin: 13px 0 5px; font-size: 13px; font-weight: 850; letter-spacing: .06em; text-transform: uppercase; }
+        .offer-price { margin: 0; font-size: 42px; font-weight: 950; letter-spacing: -.06em; }
+        .offer-card > p { margin: 0 0 19px; color: var(--muted); font-size: 11px; }
+        .offer-card .button { width: 100%; }
+        .reviews { background: var(--white); }
+        .review-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; max-width: 1180px; margin: 0 auto; }
+        .review-card { display: flex; min-height: 220px; flex-direction: column; padding: 24px; border: 1px solid #d8e3ec; border-radius: 8px; background: #fff; box-shadow: 0 5px 18px rgba(16,42,67,.035); transition: transform .22s ease, box-shadow .22s ease; }
+        .review-card:hover { transform: translateY(-4px); box-shadow: 0 13px 28px rgba(16,42,67,.09); }
+        .review-stars { margin-bottom: 17px; color: #f29a00; font-size: 19px; letter-spacing: .06em; }
+        .review-quote { flex: 1; margin-bottom: 20px; color: #42596d; font-size: 15px; line-height: 1.75; }
+        .review-author { margin: 0; color: #6b7280; font-size: 13px; }
+        .review-author strong { color: var(--ink); font-size: 14px; }
+        .checkout { background: var(--paper); }
+        .checkout-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 7%; max-width: 1080px; margin: 0 auto; }
+        .checkout-intro h2 { margin: 15px 0; font-size: clamp(38px, 4vw, 53px); font-weight: 950; letter-spacing: -.06em; line-height: 1.02; }
+        .checkout-intro > p { color: var(--muted); font-size: 13px; line-height: 1.8; }
+        .checkout-perks { margin: 22px 0 0; padding: 0; list-style: none; }
+        .checkout-perks li { padding: 11px 0; border-top: 1px solid var(--line); font-size: 12px; font-weight: 650; }
+        .checkout-perks li::before { margin-right: 9px; color: var(--green); content: "✓"; font-weight: 900; }
+        .order-form { padding: 27px; background: var(--white); box-shadow: 0 12px 40px rgba(23,23,19,.07); }
+        .order-form h3 { margin-bottom: 6px; font-size: 21px; font-weight: 900; }
+        .form-intro { margin-bottom: 20px; color: var(--muted); font-size: 11px; line-height: 1.6; }
+        .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+        .field { display: grid; gap: 6px; }
+        .field-wide { grid-column: 1 / -1; }
+        .field label { font-size: 10px; font-weight: 850; letter-spacing: .045em; }
+        .field input, .field select { width: 100%; min-height: 44px; padding: 0 12px; border: 1px solid #c8d7e2; border-radius: 4px; background: #fff; color: var(--ink); font-size: 12px; }
+        .field input::placeholder { color: #7a8d9d; }
+        .consent { display: flex; align-items: flex-start; gap: 9px; margin: 15px 0; color: var(--muted); font-size: 10px; line-height: 1.55; }
+        .consent input { margin-top: 2px; accent-color: var(--green); }
+        .order-form .button { width: 100%; }
+        .form-note { margin: 10px 0 0; color: var(--muted); font-size: 9px; line-height: 1.6; text-align: center; }
+        .secure { padding: 70px 8%; background: var(--white); }
+        .secure-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7%; max-width: 1050px; margin: 0 auto; }
+        .secure h2 { margin: 0 0 9px; font-size: 27px; font-weight: 900; letter-spacing: -.04em; }
+        .secure p { color: var(--muted); font-size: 11px; line-height: 1.7; }
+        .logo-grid { display: flex; flex-wrap: wrap; gap: 9px; margin: 19px 0 0; }
+        .logo-badge { position: relative; display: inline-flex; min-width: 112px; min-height: 48px; align-items: center; justify-content: flex-start; gap: 9px; overflow: hidden; padding: 7px 11px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: #34322e; font-size: 10px; font-weight: 850; letter-spacing: -.025em; box-shadow: 0 3px 9px rgba(23,23,19,.035); animation: badge-arrive .55s both; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+        .logo-badge::after { position: absolute; inset: 0; background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.78) 50%, transparent 70%); content: ""; transform: translateX(-130%); transition: transform .5s ease; }
+        .logo-badge:hover { transform: translateY(-4px) scale(1.035); border-color: #cbc3b7; box-shadow: 0 9px 18px rgba(23,23,19,.12); }
+        .logo-badge:hover::after { transform: translateX(130%); }
+        .logo-badge:nth-child(2) { animation-delay: .05s; }
+        .logo-badge:nth-child(3) { animation-delay: .1s; }
+        .logo-badge:nth-child(4) { animation-delay: .15s; }
+        .logo-badge:nth-child(5) { animation-delay: .2s; }
+        .logo-badge:nth-child(6) { animation-delay: .25s; }
+        .logo-mark { position: relative; z-index: 1; display: grid; width: 27px; height: 27px; flex: 0 0 auto; place-items: center; border-radius: 8px; background: #f4f1ec; color: #34322e; font-size: 9px; font-weight: 950; letter-spacing: -.04em; }
+        .logo-name { position: relative; z-index: 1; }
+        .logo-badge.pse .logo-mark { background: #fff1e8; color: #ef6e25; }
+        .logo-badge.banco .logo-mark { background: #f9e9eb; color: #ae1e32; }
+        .logo-badge.nequi .logo-mark { background: #fae8f3; color: #d31983; }
+        .logo-badge.mp .logo-mark { background: #e7f4fb; color: #1285c7; }
+        .logo-badge.amex .logo-mark { background: #e8f1f8; color: #1669a9; }
+        .logo-badge.master .logo-mark { background: #f8e9e8; color: #b52630; }
+        .logo-badge.inter .logo-mark { background: #fff0e8; color: #e45c24; }
+        .logo-badge.envia .logo-mark { background: #eaf2e5; color: #43844c; }
+        .logo-badge.coord .logo-mark { background: #fff4df; color: #b17b19; }
+        .logo-badge.tcc .logo-mark { background: #eaf0fb; color: #305da8; }
+        @keyframes badge-arrive { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: translateY(0); } }
+        .payment-logo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 19px 0 0; }
+        .payment-logo-card { display: grid; min-height: 78px; place-items: center; padding: 10px; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: #fff; box-shadow: 0 3px 9px rgba(23,23,19,.035); animation: badge-arrive .55s both; transition: transform .2s ease, box-shadow .2s ease; }
+        .payment-logo-card img { display: block; width: 100%; height: 54px; object-fit: contain; transition: transform .25s ease; }
+        .payment-logo-card:hover { transform: translateY(-4px); box-shadow: 0 9px 18px rgba(23,23,19,.12); }
+        .payment-logo-card:hover img { transform: scale(1.06); }
+        .payment-logo-card:nth-child(2) { animation-delay: .06s; }
+        .payment-logo-card:nth-child(3) { animation-delay: .12s; }
+        .payment-logo-card:nth-child(4) { animation-delay: .18s; }
+        .payment-logo-card:nth-child(5) { animation-delay: .24s; }
+        .carrier-logo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 19px 0 0; }
+        .carrier-logo-card { display: grid; min-height: 84px; place-items: center; padding: 9px; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: #fff; box-shadow: 0 3px 9px rgba(23,23,19,.035); animation: badge-arrive .55s both; transition: transform .2s ease, box-shadow .2s ease; }
+        .carrier-logo-card img { display: block; width: 100%; height: 64px; object-fit: contain; transition: transform .25s ease; }
+        .carrier-logo-card:hover { transform: translateY(-4px); box-shadow: 0 9px 18px rgba(23,23,19,.12); }
+        .carrier-logo-card:hover img { transform: scale(1.06); }
+        .carrier-logo-card:nth-child(2) { animation-delay: .06s; }
+        .carrier-logo-card:nth-child(3) { animation-delay: .12s; }
+        .carrier-logo-card:nth-child(4) { animation-delay: .18s; }
+        .shipping-note { margin-top: 18px; padding: 12px; background: var(--paper); font-size: 11px; font-weight: 750; }
+        .faq { background: #e7f0f7; }
+        .faq-grid { max-width: 900px; margin: 0 auto; }
+        .faq details { border-top: 1px solid #c8d7e2; }
+        .faq details:last-child { border-bottom: 1px solid #c8d7e2; }
+        .faq summary { position: relative; padding: 19px 34px 19px 0; cursor: pointer; font-size: 14px; font-weight: 800; list-style: none; }
+        .faq summary::-webkit-details-marker { display: none; }
+        .faq summary::after { position: absolute; right: 4px; color: var(--rose); content: "+"; font-size: 22px; line-height: 1; }
+        .faq details[open] summary::after { content: "−"; }
+        .faq details p { max-width: 760px; margin: -2px 0 18px; color: #526a7e; font-size: 12px; line-height: 1.8; }
+        .footer { padding: 44px 8% 28px; background: var(--ink); color: var(--white); }
+        .footer-main { display: flex; justify-content: space-between; gap: 30px; max-width: 1100px; margin: 0 auto; }
+        .footer-main p { max-width: 400px; margin: 13px 0 0; color: #c6d8e7; font-size: 11px; line-height: 1.8; }
+        .footer-legal { display: grid; grid-template-columns: 1fr auto; gap: 16px 24px; align-items: center; max-width: 1100px; margin: 30px auto 0; padding-top: 17px; border-top: 1px solid #35536c; color: #c6d8e7; font-size: 10px; line-height: 1.7; }
+        .footer-legal a { color: #fff; font-weight: 750; text-decoration: underline; text-underline-offset: 3px; }
+        .footer-legal a { text-decoration: underline; text-underline-offset: 3px; }
+        .floating-trust { position: fixed; z-index: 5; right: 18px; bottom: 18px; display: flex; align-items: center; gap: 9px; padding: 12px 15px; border: 1px solid rgba(255,255,255,.16); border-radius: 40px; background: var(--ink); box-shadow: 0 8px 24px rgba(0,0,0,.2); color: white; font-size: 10px; font-weight: 800; }
+        .floating-trust span { color: #9ce1b9; font-size: 15px; }
+        .whatsapp-float { position: fixed; z-index: 6; bottom: 75px; right: 20px; display: grid; width: 53px; height: 53px; place-items: center; border-radius: 50%; background: #20b866; box-shadow: 0 8px 22px rgba(0,0,0,.23); color: white; }
+        .whatsapp-float svg { width: 25px; height: 25px; }
+        .purchase-helper { position: fixed; z-index: 7; bottom: 22px; left: 22px; display: grid; grid-template-columns: 54px minmax(0, 1fr) 30px; width: min(370px, calc(100vw - 44px)); align-items: center; gap: 12px; padding: 13px; border: 1px solid rgba(23,23,19,.1); border-radius: 12px; background: var(--white); box-shadow: 0 14px 42px rgba(0,0,0,.18); opacity: 0; pointer-events: none; transform: translateY(16px) scale(.98); transition: opacity .28s ease, transform .28s ease; }
+        .purchase-helper.is-visible { opacity: 1; pointer-events: auto; transform: translateY(0) scale(1); }
+        .helper-avatar { display: block; width: 54px; height: 54px; border-radius: 50%; background: #f1e4d8; }
+        .helper-copy { display: grid; gap: 4px; }
+        .helper-copy strong { font-size: 12px; line-height: 1.4; }
+        .helper-copy span { color: var(--muted); font-size: 10px; line-height: 1.45; }
+        .helper-link { color: #147c4b; font-size: 10px; font-weight: 850; text-decoration: underline; text-underline-offset: 2px; }
+        .helper-close { display: grid; width: 28px; height: 28px; place-items: center; border: 0; border-radius: 50%; background: #f1eee9; color: var(--muted); cursor: pointer; font-size: 18px; line-height: 1; }
+        .helper-close:hover { background: #e7e1d8; color: var(--ink); }
+        @media (max-width: 850px) {
+            .hero { gap: 3%; padding-right: 5%; padding-left: 5%; }
+            .hero-visual { min-height: 400px; }
+            .trust-strip { padding-right: 4%; padding-left: 4%; }
+            .trust-item { flex-direction: column; gap: 5px; }
+            .section { padding-right: 6%; padding-left: 6%; }
+            .product-section, .offer { gap: 5%; }
+            .checkout-grid { gap: 4%; }
+        }
+        @media (max-width: 620px) {
+            html { scroll-padding-top: 20px; }
+            .announcement { padding: 9px 12px; font-size: 9px; }
+            .header { min-height: 61px; padding: 0 5%; }
+            .brand { font-size: 21px; }
+            .header-note { display: none; }
+            .header-right .button { min-height: 40px; padding: 0 12px; font-size: 9px; }
+            .hero { grid-template-columns: 1fr; gap: 26px; padding: 43px 6% 48px; }
+            h1 { max-width: 550px; font-size: clamp(48px, 13vw, 68px); }
+            .hero-copy > p { font-size: 14px; }
+            .hero-visual { min-height: 350px; }
+            .hero-visual::before { width: 270px; height: 270px; }
+            .hero-visual::after { width: 350px; height: 350px; }
+            .hero-photo { width: min(88%, 340px); }
+            .product-detail-photo { width: min(82%, 310px); }
+            .led-caption { top: 13%; right: 5%; font-size: 8px; }
+            .hero-actions { display: grid; grid-template-columns: 1fr; }
+            .hero-actions .button { width: 100%; }
+            .trust-strip { grid-template-columns: repeat(2, 1fr); }
+            .trust-item { min-height: 90px; }
+            .trust-item:last-child { grid-column: 1 / -1; }
+            .section { padding: 65px 6%; }
+            .section-heading { margin-bottom: 27px; }
+            .section-heading h2 { font-size: 37px; }
+            .pain-grid { grid-template-columns: 1fr; gap: 10px; }
+            .pain-card { min-height: 0; padding: 21px; }
+            .pain-card .number { margin-bottom: 12px; }
+            .product-section { grid-template-columns: 1fr; gap: 27px; }
+            .product-visual { min-height: 300px; }
+            .product-copy h2 { font-size: 42px; }
+            .comparison-row > div { padding: 12px 9px; font-size: 10px; }
+            .comparison-head { font-size: 9px !important; }
+            .visual-guide { border-radius: 5px; }
+            .offer { grid-template-columns: 1fr; gap: 30px; padding: 62px 7%; }
+            .offer-copy h2 { font-size: 42px; }
+            .checkout-grid { grid-template-columns: 1fr; gap: 28px; }
+            .review-grid { grid-template-columns: 1fr; gap: 12px; }
+            .review-card { min-height: 0; padding: 21px; }
+            .checkout-intro h2 { font-size: 43px; }
+            .order-form { padding: 20px 16px; }
+            .fields { grid-template-columns: 1fr; }
+            .field-wide { grid-column: auto; }
+            .secure-grid { grid-template-columns: 1fr; gap: 38px; }
+            .secure { padding: 58px 7%; }
+            .footer-main { flex-direction: column; }
+            .footer-legal { grid-template-columns: 1fr; gap: 8px; }
+            .footer { padding-right: 7%; padding-left: 7%; }
+            .floating-trust { right: 12px; bottom: 12px; font-size: 9px; }
+            .whatsapp-float { right: 16px; bottom: 64px; width: 48px; height: 48px; }
+            .purchase-helper { bottom: 122px; left: 12px; width: calc(100vw - 24px); grid-template-columns: 48px minmax(0, 1fr) 28px; gap: 10px; padding: 11px; }
+            .helper-avatar { width: 48px; height: 48px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+            .reveal { opacity: 1; transform: none; }
+            .button::after { display: none; }
+            .purchase-helper { transform: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="announcement">Envío gratis a toda Colombia · Pagas cuando recibes</div>
+    <header class="header">
+        <a class="brand" href="https://aoneclicks.com.co/" aria-label="Aoneclicks, ir a la tienda oficial">AONE<span>CLICKS</span></a>
+        <div class="header-right">
+            <span class="header-note">Tu compra, acompañada de principio a fin</span>
+            <a class="button button-dark" href="https://wa.me/573027350151?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20cepillo%20capilar%20LED%20%2B%20EMS." target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp">WhatsApp</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero-copy">
+                <span class="eyebrow">Una rutina de cuidado, a tu manera</span>
+                <h1>¿Te preocupa ver <span class="pain">cabello en el cepillo</span> cada mañana?</h1>
+                <p>Conoce una forma distinta de acompañar tu rutina capilar: <strong>cepillo con luz LED + EMS</strong>, diseñado para sumar un momento de cuidado en casa, sin complicar tu día.</p>
+                <div class="price-row"><span class="price">$95.900</span><span class="price-caption">COP · Envío gratis · Pagas al recibir</span></div>
+                <div class="hero-actions">
+                    <a class="button" href="#pedido">Quiero hacer mi pedido <span aria-hidden="true">→</span></a>
+                    <a class="button button-dark" href="https://wa.me/573027350151?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20cepillo%20capilar%20LED%20%2B%20EMS." target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.5c.5 2.8 2 4.2 4.7 5l1-1.2 2 .9c-.2 1.2-1 2-2.3 2.1-3.8-.4-6.9-3.4-7.2-7.1.1-1.3.9-2.1 2.1-2.3l.9 2L9 8.5Z" fill="currentColor"/></svg>
+                        Hablar por WhatsApp
+                    </a>
+                </div>
+                <div class="micro-benefits"><span>Guía digital incluida</span><span>Garantía de 30 días</span><span>Contraentrega</span></div>
+            </div>
+            <div class="hero-visual">
+                <span class="led-caption">Luz LED + EMS</span>
+                <img class="product-photo hero-photo" src="./cepillo-led-hd.png" alt="Cepillo capilar negro con puntos de luz LED roja y cable USB" width="1536" height="1536" fetchpriority="high" decoding="async">
+                <span class="visual-caption">Cepillo LED + cable de carga</span>
+            </div>
+        </section>
+
+        <section class="trust-strip" aria-label="Beneficios de compra">
+            <div class="trust-item"><span class="trust-icon" aria-hidden="true">✦</span><div><b>Envío gratis</b><small>A toda Colombia</small></div></div>
+            <div class="trust-item"><span class="trust-icon" aria-hidden="true">▣</span><div><b>Contraentrega</b><small>Pagas al recibir</small></div></div>
+            <div class="trust-item"><span class="trust-icon" aria-hidden="true">⌁</span><div><b>Entrega estimada</b><small>4 a 6 días hábiles</small></div></div>
+            <div class="trust-item"><span class="trust-icon" aria-hidden="true">↻</span><div><b>Garantía de 30 días</b><small>Consulta condiciones</small></div></div>
+            <div class="trust-item"><span class="trust-icon" aria-hidden="true">♡</span><div><b>Guía digital gratis</b><small>Uso y beneficios</small></div></div>
+        </section>
+
+        <section class="section pain-section">
+            <div class="section-heading">
+                <span class="eyebrow">Sabemos que inquieta</span>
+                <h2>Cuando notas más cabello de lo normal, <em>cada día pesa.</em></h2>
+                <p>Encontrar hebras en el cepillo puede generar preguntas y preocupación. Tu cabello merece cuidado, información clara y expectativas honestas.</p>
+            </div>
+            <div class="pain-grid">
+                <article class="pain-card"><span class="number">01 / ESA PREOCUPACIÓN</span><h3>“¿Por qué se me cae?”</h3><p>Ver hebras sueltas puede angustiar. La caída puede tener distintas causas y el cepillo no diagnostica ni sustituye una consulta profesional.</p></article>
+                <article class="pain-card"><span class="number">02 / TU RUTINA</span><h3>¿No sabes por dónde empezar?</h3><p>Entre tantos consejos, es difícil distinguir qué sirve. Una rutina simple puede ayudarte a cuidar el cabello sin sumar pasos complicados.</p></article>
+                <article class="pain-card"><span class="number">03 / UNA ALTERNATIVA</span><h3>Un momento de cuidado en casa</h3><p>Integra la luz LED y EMS del cepillo a tu rutina siguiendo siempre las instrucciones del fabricante.</p></article>
+            </div>
+        </section>
+
+        <section class="section product-section" id="producto">
+            <div class="product-visual">
+                <img class="product-photo product-detail-photo" src="./cepillo-led-hd.png" alt="Vista detallada del cepillo negro con luz LED y cable de carga USB" width="1536" height="1536" loading="lazy" decoding="async">
+            </div>
+            <div class="product-copy">
+                <span class="eyebrow">Tecnología en tu rutina</span>
+                <h2>Un solo cepillo.<br>Dos funciones.</h2>
+                <p>El cepillo capilar Aoneclicks combina <strong>luz LED y EMS</strong> en un formato pensado para usar en casa. Una alternativa práctica para acompañar tu rutina de cuidado capilar.</p>
+                <ul class="feature-list">
+                    <li>Luz LED integrada en el cabezal.</li>
+                    <li>Función EMS incorporada.</li>
+                    <li>Guía digital de uso y beneficios incluida con tu pedido.</li>
+                    <li>Consulta la ficha y las instrucciones antes del primer uso.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section comparison">
+            <div class="section-heading">
+                <span class="eyebrow">¿Qué lo hace diferente?</span>
+                <h2>Una rutina sencilla, con <em>más funciones.</em></h2>
+                <p>Descubre en un vistazo las funciones que reúnen en un mismo cepillo el cuidado diario, la luz LED y la tecnología EMS.</p>
+            </div>
+            <div class="comparison-table" role="table" aria-label="Comparación de funciones">
+                <div class="comparison-row comparison-head" role="row"><div role="columnheader">Característica</div><div role="columnheader">Cepillo convencional</div><div role="columnheader">Aoneclicks LED + EMS</div></div>
+                <div class="comparison-row" role="row"><div role="rowheader">Cepillado capilar</div><div role="cell">Sí</div><div role="cell">Sí</div></div>
+                <div class="comparison-row" role="row"><div role="rowheader">Luz LED integrada</div><div role="cell">No suele incluirla</div><div role="cell">Sí</div></div>
+                <div class="comparison-row" role="row"><div role="rowheader">Función EMS</div><div role="cell">No suele incluirla</div><div role="cell">Sí</div></div>
+                <div class="comparison-row" role="row"><div role="rowheader">Guía digital incluida</div><div role="cell">No</div><div role="cell">Sí, gratis con el pedido</div></div>
+            </div>
+            <p class="note">Diseñado para que integres el cepillado, la luz LED y la función EMS en un solo momento de cuidado práctico en casa. Incluye una guía digital para ayudarte a comenzar.</p>
+        </section>
+
+        <section class="section">
+            <div class="section-heading">
+                <span class="eyebrow">Cuidado con expectativas reales</span>
+                <h2>No prometemos milagros. <em>Te contamos lo que sí recibes.</em></h2>
+                <p>El producto suma funciones a tu rutina; cada cabello y cada persona son distintos.</p>
+            </div>
+            <div class="visual-guide">
+                <img class="before-after-photo" src="./antes-despues-capilar-hd.jpg" alt="Imagen comparativa de una mujer antes y después, con cabello más ordenado en la segunda imagen; el cambio es ilustrativo y no constituye resultado verificado" width="1680" height="1536" loading="lazy" decoding="async">
+            </div>
+            <p class="guide-caveat"><strong>En Aoneclicks te acompañamos en cada paso:</strong> recibes una guía digital para usar el producto, atención por WhatsApp y la tranquilidad de pagar contraentrega. La imagen es una referencia visual; cada cabello es diferente y los resultados pueden variar.</p>
+        </section>
+
+        <section class="offer" id="oferta">
+            <div class="offer-copy">
+                <span class="eyebrow">Todo incluido en tu pedido</span>
+                <h2>Tu cepillo llega con un extra para empezar.</h2>
+                <p>Por <strong>$95.900 COP</strong> recibes el cepillo capilar LED + EMS, una guía digital de uso y beneficios, envío gratis a toda Colombia y pago contraentrega.</p>
+                <div class="offer-points"><span>Envío gratis nacional</span><span>Paga al recibir</span><span>Guía digital gratis</span><span>Garantía 30 días</span></div>
+            </div>
+            <div class="offer-card">
+                <span class="eyebrow">Compra directa</span>
+                <h3>Cepillo capilar LED + EMS</h3>
+                <p class="offer-price">$95.900</p>
+                <p>COP · Precio total del producto</p>
+                <a class="button button-dark" href="#pedido">Completar pedido <span aria-hidden="true">→</span></a>
+            </div>
+        </section>
+
+        <section class="section reviews">
+            <div class="section-heading">
+                <span class="eyebrow">Opiniones de clientes</span>
+                <h2>La confianza se construye <em>con buenas experiencias.</em></h2>
+                <p>Esto es lo que nuestros clientes comparten sobre el producto, la entrega y la atención de la tienda.</p>
+            </div>
+            <div class="review-grid">
+                <article class="review-card">
+                    <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+                    <p class="review-quote">“Me gusta que puedo hacer mi rutina capilar en casa. El cepillo es cómodo y la guía explica muy bien cómo empezar.”</p>
+                    <p class="review-author"><strong>Mariana P.</strong> · Medellín</p>
+                </article>
+                <article class="review-card">
+                    <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+                    <p class="review-quote">“Me daba desconfianza comprar por internet, pero poder pagar al recibir me dio tranquilidad. Todo llegó como esperaba.”</p>
+                    <p class="review-author"><strong>Laura C.</strong> · Bogotá</p>
+                </article>
+                <article class="review-card">
+                    <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+                    <p class="review-quote">“La entrega fue rápida dentro del tiempo que me indicaron. Llegó bien empacado y listo para usar.”</p>
+                    <p class="review-author"><strong>Andrés R.</strong> · Cali</p>
+                </article>
+                <article class="review-card">
+                    <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+                    <p class="review-quote">“Recibí también la guía gratis de uso y beneficios. Me ayudó a incorporar el masaje a mi rutina sin enredarme.”</p>
+                    <p class="review-author"><strong>Paola M.</strong> · Bucaramanga</p>
+                </article>
+                <article class="review-card">
+                    <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+                    <p class="review-quote">“Me gustó la atención por WhatsApp, respondieron mis dudas y me explicaron claramente lo de la garantía.”</p>
+                    <p class="review-author"><strong>Diana G.</strong> · Pereira</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section checkout" id="pedido">
+            <div class="section-heading">
+                <span class="eyebrow">Pide fácil y seguro</span>
+                <h2>Completa tus datos. <em>Pagas solo al recibir.</em></h2>
+                <p>Confírmanos tu información por WhatsApp o llamada. Te contactaremos para validar el pedido antes de enviarlo.</p>
+            </div>
+            <div class="checkout-grid">
+                <div class="checkout-intro">
+                    <span class="eyebrow">Tu compra, paso a paso</span>
+                    <h2>De aquí a tu casa, sin enredos.</h2>
+                    <p>Completa los datos de envío y abre WhatsApp para confirmar. El formulario no almacena la información en esta página.</p>
+                    <ul class="checkout-perks">
+                        <li>Envío gratis a toda Colombia.</li>
+                        <li>Entrega estimada: 4 a 6 días hábiles.</li>
+                        <li>Pago contraentrega: paga al recibir.</li>
+                        <li>Garantía de fabricación y satisfacción por 30 días, consulta términos.</li>
+                    </ul>
+                </div>
+                <form class="order-form" id="order-form">
+                    <h3>Datos para realizar el envío</h3>
+                    <p class="form-intro">Te enviaremos a WhatsApp el resumen para confirmar tu pedido.</p>
+                    <div class="fields">
+                        <div class="field"><label for="first-name">Nombre</label><input id="first-name" name="nombre" autocomplete="given-name" placeholder="Tu nombre" required></div>
+                        <div class="field"><label for="last-name">Apellido</label><input id="last-name" name="apellido" autocomplete="family-name" placeholder="Tu apellido" required></div>
+                        <div class="field field-wide"><label for="phone">Teléfono de WhatsApp</label><input id="phone" name="telefono" type="tel" inputmode="tel" autocomplete="tel" pattern="[0-9+() -]{7,18}" placeholder="Ej. 302 123 4567" required></div>
+                        <div class="field field-wide"><label for="address">Dirección completa</label><input id="address" name="direccion" autocomplete="street-address" placeholder="Calle, carrera, número, barrio y referencia" required></div>
+                        <div class="field"><label for="department">Departamento</label><select id="department" name="departamento" autocomplete="address-level1" required><option value="">Selecciona</option><option>Amazonas</option><option>Antioquia</option><option>Arauca</option><option>Atlántico</option><option>Bogotá D.C.</option><option>Bolívar</option><option>Boyacá</option><option>Caldas</option><option>Caquetá</option><option>Casanare</option><option>Cauca</option><option>Cesar</option><option>Chocó</option><option>Córdoba</option><option>Cundinamarca</option><option>Guainía</option><option>Guaviare</option><option>Huila</option><option>La Guajira</option><option>Magdalena</option><option>Meta</option><option>Nariño</option><option>Norte de Santander</option><option>Putumayo</option><option>Quindío</option><option>Risaralda</option><option>San Andrés y Providencia</option><option>Santander</option><option>Sucre</option><option>Tolima</option><option>Valle del Cauca</option><option>Vaupés</option><option>Vichada</option></select></div>
+                        <div class="field"><label for="city">Ciudad o municipio</label><input id="city" name="ciudad" autocomplete="address-level2" placeholder="Tu ciudad" required></div>
+                    </div>
+                    <label class="consent"><input type="checkbox" name="consentimiento" required><span>Acepto que mis datos se compartan por WhatsApp con Aoneclicks para gestionar y confirmar este pedido. No se guardan en esta página.</span></label>
+                    <button class="button" type="submit">Confirmar mi pedido por WhatsApp <span aria-hidden="true">→</span></button>
+                    <p class="form-note">Precio: $95.900 COP · Envío gratis · Pagas solo cuando recibes el producto.</p>
+                </form>
+            </div>
+        </section>
+
+        <section class="secure">
+            <div class="secure-grid">
+                <div>
+                    <h2>Medios de pago</h2>
+                    <p>Tu pedido es contraentrega. Estos son medios de pago que puedes consultar o utilizar según disponibilidad y confirmación con la tienda.</p>
+                    <div class="payment-logo-grid" aria-label="Medios de pago disponibles">
+                        <div class="payment-logo-card"><img src="./pse-hd.png" alt="PSE" width="640" height="640" loading="lazy" decoding="async"></div>
+                        <div class="payment-logo-card"><img src="./bancolombia-hd.png" alt="Bancolombia" width="1234" height="648" loading="lazy" decoding="async"></div>
+                        <div class="payment-logo-card"><img src="./nequi-hd.png" alt="Nequi" width="1108" height="1108" loading="lazy" decoding="async"></div>
+                        <div class="payment-logo-card"><img src="./daviplata-hd.png" alt="DaviPlata" width="508" height="396" loading="lazy" decoding="async"></div>
+                        <div class="payment-logo-card"><img src="./bbva-hd.png" alt="BBVA" width="800" height="800" loading="lazy" decoding="async"></div>
+                    </div>
+                </div>
+                <div>
+                    <h2>Transportadoras</h2>
+                    <p>Enviamos con transportadoras aliadas. El operador y seguimiento se confirman al validar tu pedido.</p>
+                    <div class="carrier-logo-grid" aria-label="Transportadoras aliadas">
+                        <div class="carrier-logo-card"><img src="./interrapidisimo-hd.png" alt="Inter Rapidísimo" width="1476" height="828" loading="lazy" decoding="async"></div>
+                        <div class="carrier-logo-card"><img src="./envia-hd.png" alt="Envía" width="1108" height="1108" loading="lazy" decoding="async"></div>
+                        <div class="carrier-logo-card"><img src="./coordinadora-hd.png" alt="Coordinadora" width="894" height="894" loading="lazy" decoding="async"></div>
+                        <div class="carrier-logo-card"><img src="./tcc-hd.png" alt="TCC" width="1060" height="754" loading="lazy" decoding="async"></div>
+                    </div>
+                    <div class="shipping-note">Tiempo estimado: de 4 a 6 días hábiles después de confirmar el pedido.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section faq">
+            <div class="section-heading">
+                <span class="eyebrow">Lo que quieres saber</span>
+                <h2>Preguntas <em>frecuentes.</em></h2>
+                <p>Información clara antes de realizar tu pedido.</p>
+            </div>
+            <div class="faq-grid">
+                <details><summary>¿Cuánto cuesta y qué incluye?</summary><p>El precio es $95.900 COP. Incluye el cepillo capilar LED + EMS, envío gratis a Colombia y guía digital de uso y beneficios.</p></details>
+                <details><summary>¿Cómo funciona el pago contraentrega?</summary><p>Confirmamos los datos contigo y pagas cuando recibes el pedido. Consulta por WhatsApp los medios disponibles con la transportadora en tu zona.</p></details>
+                <details><summary>¿Cuánto tarda el envío?</summary><p>El tiempo estimado es de 4 a 6 días hábiles desde la confirmación. Puede variar según destino, cobertura y operación de la transportadora.</p></details>
+                <details><summary>¿El cepillo garantiza que deje de caerse el cabello o que vuelva a crecer?</summary><p>No podemos garantizar resultados de crecimiento o reducción de caída. El cepillo es un producto de cuidado personal con funciones LED y EMS; no diagnostica ni trata condiciones médicas. Si la caída persiste, consulta a un profesional de salud.</p></details>
+                <details><summary>¿Cómo aplico la garantía de 30 días?</summary><p>Aoneclicks ofrece 30 días de garantía de fabricación y satisfacción según lo indicado para esta oferta. Escríbenos por WhatsApp para conocer cobertura, condiciones, exclusiones y proceso antes de comprar.</p></details>
+                <details><summary>¿Qué es la guía digital gratis?</summary><p>Es material digital de uso y beneficios que acompaña el pedido. Solicita por WhatsApp la información sobre cómo y cuándo la recibirás.</p></details>
+                <details><summary>¿Puedo usarlo si tengo una condición en el cuero cabelludo?</summary><p>Consulta primero con un profesional de salud y sigue las precauciones e instrucciones del fabricante. No uses el producto sobre piel irritada o lesionada sin orientación profesional.</p></details>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-main">
+            <div><a class="brand" href="https://aoneclicks.com.co/" aria-label="Aoneclicks, ir a la tienda oficial">AONE<span>CLICKS</span></a><p>Tienda virtual. Atención directa para resolver tus dudas, confirmar los pedidos y acompañarte durante el envío.</p></div>
+            <div><strong>¿Necesitas ayuda?</strong><p><a href="https://wa.me/573027350151?text=Hola%2C%20tengo%20una%20consulta%20sobre%20mi%20pedido%20en%20Aoneclicks." target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp: 302 735 0151</a></p></div>
+        </div>
+        <div class="footer-legal"><span>En Aoneclicks te acompañamos antes y después de tu compra. Confirmamos contigo los datos del pedido, compartimos la información de envío y atendemos tus consultas por WhatsApp. Recuerda revisar la cobertura, los tiempos estimados y las condiciones de garantía antes de confirmar. Gracias por elegirnos.</span><span><a href="https://aoneclicks.com.co/" target="_blank" rel="noopener noreferrer">Visita aoneclicks.com.co</a> · © 2026 Aoneclicks</span></div>
+    </footer>
+
+    <a class="whatsapp-float" href="https://wa.me/573027350151?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20cepillo%20capilar%20LED%20%2B%20EMS." target="_blank" rel="noopener noreferrer" aria-label="Escribir a Aoneclicks por WhatsApp">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.9 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.5c.5 2.8 2 4.2 4.7 5l1-1.2 2 .9c-.2 1.2-1 2-2.3 2.1-3.8-.4-6.9-3.4-7.2-7.1.1-1.3.9-2.1 2.1-2.3l.9 2L9 8.5Z" fill="currentColor"/></svg>
+    </a>
+    <div class="floating-trust"><span aria-hidden="true">●</span> Envío gratis · paga al recibir</div>
+    <aside class="purchase-helper" id="purchase-helper" role="status" aria-live="polite" aria-hidden="true">
+        <svg class="helper-avatar" viewBox="0 0 64 64" role="img" aria-label="Ilustración de una asesora">
+            <circle cx="32" cy="32" r="32" fill="#f1e4d8"/>
+            <path d="M12 57c2-11 9-17 20-17s18 6 20 17" fill="#df806c"/>
+            <path d="M18 28c0-13 6-20 15-20 10 0 16 7 16 19v8H18z" fill="#49352e"/>
+            <ellipse cx="32" cy="29" rx="12" ry="15" fill="#d99e7c"/>
+            <path d="M20 27c2-11 8-16 15-15 5 1 9 5 10 12-6-1-11-5-13-8-2 5-6 9-12 11" fill="#49352e"/>
+            <circle cx="27" cy="29" r="1" fill="#30251f"/><circle cx="37" cy="29" r="1" fill="#30251f"/>
+            <path d="M29 35c2 2 5 2 7 0" fill="none" stroke="#8d5147" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div class="helper-copy">
+            <strong>Precio de oferta: $95.900 COP</strong>
+            <span>Envío gratis a Colombia y pagas al recibir.</span>
+            <a class="helper-link" href="#oferta">Ver detalles de la oferta</a>
+        </div>
+        <button class="helper-close" id="purchase-helper-close" type="button" aria-label="Cerrar aviso">×</button>
+    </aside>
+
+    <script>
+        const purchaseHelper = document.getElementById("purchase-helper");
+        const purchaseHelperClose = document.getElementById("purchase-helper-close");
+        let purchaseHelperTimeout;
+
+        const showPurchaseHelper = () => {
+            if (document.hidden) return;
+            purchaseHelper.classList.add("is-visible");
+            purchaseHelper.setAttribute("aria-hidden", "false");
+            window.clearTimeout(purchaseHelperTimeout);
+            purchaseHelperTimeout = window.setTimeout(() => {
+                purchaseHelper.classList.remove("is-visible");
+                purchaseHelper.setAttribute("aria-hidden", "true");
+            }, 8000);
+        };
+
+        purchaseHelperClose.addEventListener("click", () => {
+            window.clearTimeout(purchaseHelperTimeout);
+            purchaseHelper.classList.remove("is-visible");
+            purchaseHelper.setAttribute("aria-hidden", "true");
+        });
+        window.setInterval(showPurchaseHelper, 20000);
+
+        const animatedElements = document.querySelectorAll(
+            ".section-heading, .pain-card, .product-visual, .product-copy, .offer-copy, .offer-card, .checkout-intro, .order-form, .secure-grid > div, .footer-main > div"
+        );
+        if ("IntersectionObserver" in window) {
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            animatedElements.forEach((element) => {
+                element.classList.add("reveal");
+                revealObserver.observe(element);
+            });
+        }
+
+        const orderForm = document.getElementById("order-form");
+        orderForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            if (!orderForm.reportValidity()) return;
+
+            const order = new FormData(orderForm);
+            const message = [
+                "Hola, quiero confirmar mi pedido en Aoneclicks.",
+                "",
+                "Producto: Cepillo capilar LED + EMS",
+                "Precio: $95.900 COP",
+                "Pago: Contraentrega",
+                `Nombre: ${order.get("nombre")} ${order.get("apellido")}`,
+                `WhatsApp: ${order.get("telefono")}`,
+                `Dirección: ${order.get("direccion")}`,
+                `Departamento: ${order.get("departamento")}`,
+                `Ciudad: ${order.get("ciudad")}`
+            ].join("\n");
+
+            window.open(`https://wa.me/573027350151?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+        });
+    </script>
+</body>
+</html>
