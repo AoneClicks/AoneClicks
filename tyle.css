@@ -568,26 +568,149 @@ h1 .solution {
     }
 
     .hero {
-        grid-template-columns: 1fr;
-        gap: 28px;
-        padding: 46px 6% 50px;
+        grid-template-columns: minmax(0, 1fr) minmax(0, .86fr);
+        grid-template-areas:
+            "eyebrow visual"
+            "title visual"
+            "answer visual"
+            "price price"
+            "actions actions"
+            "benefits benefits";
+        align-items: stretch;
+        gap: 12px 13px;
+        padding: 35px 5% 38px;
     }
 
-    .hero-visual {
-        min-height: 350px;
-        border-radius: 20px;
+    .hero-copy {
+        display: contents;
     }
 
-    .hero-copy > p {
-        font-size: 14px;
+    .hero .eyebrow {
+        grid-area: eyebrow;
+        align-self: end;
+        gap: 6px;
+        font-size: 8px;
+        letter-spacing: .1em;
+        line-height: 1.45;
     }
 
-    .hero-solution {
-        font-size: 21px;
+    .hero .eyebrow::before {
+        width: 13px;
+        flex: 0 0 auto;
+    }
+
+    .hero h1 {
+        grid-area: title;
+        align-self: start;
+        max-width: none;
+        margin: 0;
+        font-size: clamp(24px, 7.2vw, 31px);
+        line-height: 1.03;
     }
 
     .hero-answer {
-        margin-bottom: 22px;
+        grid-area: answer;
+        align-self: start;
+        width: 100%;
+        margin: 0;
+        padding: 11px 10px;
+        border-radius: 4px 11px 11px 4px;
+    }
+
+    .answer-label {
+        font-size: 7px;
+        letter-spacing: .1em;
+    }
+
+    .hero-solution {
+        margin: 5px 0 6px;
+        font-size: clamp(16px, 4.7vw, 20px);
+        line-height: 1.12;
+    }
+
+    .hero-answer > p {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    .hero-visual {
+        grid-area: visual;
+        min-width: 0;
+        min-height: 260px;
+        align-self: stretch;
+        border-radius: 17px;
+    }
+
+    .hero-photo {
+        width: min(100%, 300px);
+    }
+
+    .led-caption {
+        top: 15%;
+        right: 4%;
+        padding: 6px 7px;
+        font-size: 7px;
+    }
+
+    .visual-caption {
+        right: 8px;
+        bottom: 9px;
+        font-size: 7px;
+    }
+
+    .price-row {
+        grid-area: price;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+    }
+
+    .price {
+        font-size: 30px;
+        line-height: 1.15;
+        white-space: nowrap;
+    }
+
+    .price-caption {
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
+    .hero-actions {
+        grid-area: actions;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .hero-actions .button {
+        min-width: 0;
+        min-height: 46px;
+        padding: 0 9px;
+        gap: 5px;
+        font-size: 8px;
+        letter-spacing: .025em;
+        line-height: 1.3;
+    }
+
+    .hero-actions .button svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .micro-benefits {
+        grid-area: benefits;
+        gap: 6px 12px;
+        margin: 0;
+        font-size: 9px;
+    }
+
+    .purchase-helper {
+        display: none;
+    }
+
+    .floating-trust {
+        display: none;
     }
 
     .trust-strip {
