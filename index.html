@@ -6,6 +6,8 @@
     <meta name="theme-color" content="#102a43">
     <meta name="description" content="Cepillo capilar con luz LED y EMS Aoneclicks. Envío gratis en Colombia, pago contraentrega y guía digital incluida.">
     <title>Cepillo capilar LED + EMS | Aoneclicks</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="apple-touch-icon" href="./favicon.png">
     <style>
         :root {
             color-scheme: light;
@@ -30,8 +32,8 @@
         .brand { font-size: 22px; font-weight: 950; letter-spacing: -.07em; }
         .brand span { color: var(--rose); }
         .brand-logo { display: flex; align-items: center; }
-        .brand-logo img { display: block; width: auto; height: 64px; image-rendering: -webkit-optimize-contrast; }
-        .footer .brand-logo img { height: 88px; padding: 6px 10px; border-radius: 8px; background: #fff; }
+        .brand-logo img { display: block; width: auto;         height: 80px; max-width: 100%; }
+                .footer .brand-logo img { height: 96px; padding: 10px 16px; border-radius: 10px; background: #fff; }
         .header-right { display: flex; align-items: center; gap: 24px; }
         .header-note { color: var(--muted); font-size: 12px; }
         .button { position: relative; display: inline-flex; min-height: 54px; align-items: center; justify-content: center; gap: 10px; overflow: hidden; padding: 0 23px; border: 0; border-radius: 5px; background: var(--rose); color: var(--ink); cursor: pointer; font-size: 12px; font-weight: 850; letter-spacing: .04em; text-align: center; text-transform: uppercase; transition: transform .18s, background .18s; }
@@ -261,8 +263,9 @@
         @media (max-width: 620px) {
             html { scroll-padding-top: 20px; }
             .announcement { padding: 9px 12px; font-size: 9px; }
-            .header { min-height: 61px; padding: 0 5%; }
-            .brand { font-size: 21px; }
+            .header { min-height: 70px; padding: 4px 5%; }
+            .brand-logo img { height: 60px; }
+            .footer .brand-logo img { height: 80px; }
             .header-note { display: none; }
             .header-right .button { min-height: 40px; padding: 0 12px; font-size: 9px; }
             .hero { grid-template-columns: 1fr; gap: 26px; padding: 43px 6% 48px; }
@@ -322,7 +325,7 @@
 <body>
     <div class="announcement">Envío gratis a toda Colombia · Pagas cuando recibes</div>
     <header class="header">
-        <a class="brand brand-logo" href="https://aoneclicks.com.co/" aria-label="Aoneclicks, ir a la tienda oficial"><img src="./aoneclicks-logo.png" alt="Aoneclicks Shopping" width="248" height="175"></a>
+        <a class="brand brand-logo" href="https://aoneclicks.com.co/" aria-label="Aoneclicks, ir a la tienda oficial"><img src="./aoneclicks-logo.png"         alt="Aoneclicks" width="691" height="402" fetchpriority="high"></a>
         <div class="header-right">
             <span class="header-note">Tu compra, acompañada de principio a fin</span>
             <a class="button button-dark" href="https://wa.me/573027350151?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20cepillo%20capilar%20LED%20%2B%20EMS." target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp">WhatsApp</a>
@@ -594,7 +597,7 @@
 
     <footer class="footer">
         <div class="footer-main">
-            <div><a class="brand brand-logo" href="https://aoneclicks.com.co/" aria-label="Aoneclicks, ir a la tienda oficial"><img src="./aoneclicks-logo.png" alt="Aoneclicks Shopping" width="248" height="175" loading="lazy"></a><p>Tienda virtual. Atención directa para resolver tus dudas, confirmar los pedidos y acompañarte durante el envío.</p></div>
+            <div><a class="brand brand-logo" href="https://aoneclicks.com.co/" aria-label="Aoneclicks, ir a la tienda oficial"><img src="./aoneclicks-logo.png" alt="Aoneclicks" width="691" height="402" loading="lazy"></a><p>Tienda virtual. Atención directa para resolver tus dudas, confirmar los pedidos y acompañarte durante el envío.</p></div>
             <div><strong>¿Necesitas ayuda?</strong><p><a href="https://wa.me/573027350151?text=Hola%2C%20tengo%20una%20consulta%20sobre%20mi%20pedido%20en%20Aoneclicks." target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp: 302 735 0151</a></p></div>
         </div>
         <div class="footer-legal"><span>En Aoneclicks te acompañamos antes y después de tu compra. Confirmamos contigo los datos del pedido, compartimos la información de envío y atendemos tus consultas por WhatsApp. Recuerda revisar la cobertura, los tiempos estimados y las condiciones de garantía antes de confirmar. Gracias por elegirnos.</span><span><a href="https://aoneclicks.com.co/" target="_blank" rel="noopener noreferrer">Visita aoneclicks.com.co</a> · © 2026 Aoneclicks</span></div>
