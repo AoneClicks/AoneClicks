@@ -136,8 +136,9 @@
         .guide-caveat { max-width: 840px; margin: 14px auto 0; padding: 14px 17px; border-left: 3px solid var(--rose); background: var(--white); color: var(--muted); font-size: 11px; line-height: 1.7; }
         .media-section { background: var(--white); }
         .media-section--soft { background: #e7f0f7; }
-        .media-frame { max-width: 980px; margin: 0 auto; overflow: hidden; border-radius: 9px; background: #0c2238; box-shadow: 0 18px 50px rgba(16,42,67,.12); }
+        .media-frame { position: relative; max-width: 980px; margin: 0 auto; overflow: hidden; border-radius: 9px; background: #0c2238; box-shadow: 0 18px 50px rgba(16,42,67,.12); }
         .media-frame img, .media-frame video { display: block; width: 100%; height: auto; max-height: 72vh; object-fit: contain; }
+        .media-frame > .media-logo { position: absolute; z-index: 1; top: 12px; left: 12px; width: clamp(76px, 10vw, 110px); height: auto; max-height: none; padding: 4px; border-radius: 4px; background: rgba(255,255,255,.92); box-shadow: 0 2px 8px rgba(0,0,0,.18); pointer-events: none; }
         .media-photo { background: #e3edf5; }
         .offer { display: grid; grid-template-columns: 1fr .8fr; align-items: center; gap: 7%; padding: 75px 9%; background: #e7f0f7; }
         .offer-copy h2 { max-width: 620px; margin: 15px 0; font-size: clamp(38px, 4vw, 54px); font-weight: 950; letter-spacing: -.06em; line-height: 1.04; }
@@ -367,6 +368,21 @@
             <div class="trust-item"><span class="trust-icon" aria-hidden="true">♡</span><div><b>Guía digital gratis</b><small>Uso y beneficios</small></div></div>
         </section>
 
+        <section class="section media-section media-section--soft" id="video-rutina">
+            <div class="section-heading">
+                <span class="eyebrow">Mira el producto en acción</span>
+                <h2>Un momento de cuidado <em>a tu ritmo.</em></h2>
+                <p>Video de rutina capilar con el cepillo. Reprodúcelo cuando quieras.</p>
+            </div>
+            <figure class="media-frame">
+                <video controls playsinline preload="metadata" width="1080" height="1920" aria-label="Video de una rutina capilar">
+                    <source src="./rutina-capilar.mp4" type="video/mp4">
+                    Tu navegador no puede reproducir este video.
+                </video>
+                <img class="media-logo" src="./aoneclicks-logo.png" alt="Aoneclicks" width="691" height="402" loading="lazy" decoding="async">
+            </figure>
+        </section>
+
         <section class="section pain-section">
             <div class="section-heading">
                 <span class="eyebrow">Sabemos que inquieta</span>
@@ -397,6 +413,20 @@
             </div>
         </section>
 
+        <section class="section media-section" id="video-demostracion">
+            <div class="section-heading">
+                <span class="eyebrow">Conoce sus detalles</span>
+                <h2>Una demostración del <em>cepillo capilar.</em></h2>
+            </div>
+            <figure class="media-frame">
+                <video controls playsinline preload="metadata" width="1920" height="1080" aria-label="Demostración del cepillo capilar">
+                    <source src="./cepillo-capilar-demostracion.mp4" type="video/mp4">
+                    Tu navegador no puede reproducir este video.
+                </video>
+                <img class="media-logo" src="./aoneclicks-logo.png" alt="Aoneclicks" width="691" height="402" loading="lazy" decoding="async">
+            </figure>
+        </section>
+
         <section class="section media-section" id="uso-del-cepillo">
             <div class="section-heading">
                 <span class="eyebrow">Una rutina en casa</span>
@@ -424,20 +454,6 @@
             <p class="note">Diseñado para que integres el cepillado, la luz LED y la función EMS en un solo momento de cuidado práctico en casa. Incluye una guía digital para ayudarte a comenzar.</p>
         </section>
 
-        <section class="section media-section media-section--soft" id="video-rutina">
-            <div class="section-heading">
-                <span class="eyebrow">Mira el producto en acción</span>
-                <h2>Un momento de cuidado <em>a tu ritmo.</em></h2>
-                <p>Video de rutina capilar con el cepillo. Reprodúcelo cuando quieras.</p>
-            </div>
-            <figure class="media-frame">
-                <video controls playsinline preload="metadata" aria-label="Video de una rutina capilar">
-                    <source src="./rutina-capilar.mp4" type="video/mp4">
-                    Tu navegador no puede reproducir este video.
-                </video>
-            </figure>
-        </section>
-
         <section class="section">
             <div class="section-heading">
                 <span class="eyebrow">Cuidado con expectativas reales</span>
@@ -448,19 +464,6 @@
                 <img class="before-after-photo" src="./antes-despues-capilar-hd.jpg" alt="Imagen comparativa de una mujer antes y después, con cabello más ordenado en la segunda imagen; el cambio es ilustrativo y no constituye resultado verificado" width="1680" height="1536" loading="lazy" decoding="async">
             </div>
             <p class="guide-caveat"><strong>En Aoneclicks te acompañamos en cada paso:</strong> recibes una guía digital para usar el producto, atención por WhatsApp y la tranquilidad de pagar contraentrega. La imagen es una referencia visual; cada cabello es diferente y los resultados pueden variar.</p>
-        </section>
-
-        <section class="section media-section" id="video-demostracion">
-            <div class="section-heading">
-                <span class="eyebrow">Conoce sus detalles</span>
-                <h2>Una demostración del <em>cepillo capilar.</em></h2>
-            </div>
-            <figure class="media-frame">
-                <video controls playsinline preload="metadata" aria-label="Demostración del cepillo capilar">
-                    <source src="./cepillo-capilar-demostracion.mp4" type="video/mp4">
-                    Tu navegador no puede reproducir este video.
-                </video>
-            </figure>
         </section>
 
         <section class="offer" id="oferta">
